@@ -10,6 +10,7 @@
 
 <script>
 import uuid from 'uuid';
+
 export default {
     name: "AddTask",
     data() {
@@ -25,23 +26,23 @@ export default {
                 name: this.name,
                 completed: false
             }
-            this.$emit('add-task', task)
+            this.$emit('add-task', task);
         }
     }
 }
 </script>
 
 <style scoped>
-    form {
-        display: flex;
-    }
+  form {
+    display: flex;
+  }
 
-    input[type="text"] {
-        flex: 10;
-        padding: 5px;
-    }
+  input[type="text"] {
+    flex: 10;
+    padding: 5px;
+  }
 
-    input[type="submit"] {
-        flex: 2;    
-    }
+  input[type="submit"] {
+    flex: 2;    
+  }
 </style>
