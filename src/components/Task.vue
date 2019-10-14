@@ -3,18 +3,23 @@
     <p>
       <input type="checkbox" v-on:change="markComplete">
       {{task.name}}
-      <button @click="$emit('del-task', task.id)">Delete</button>
+      <button @click="deleteTask">Delete</button>
     </p>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   name: "Task",
   props: ["task"],
   methods: {
+    ...mapActions(['removeTask']),
     markComplete() {
       this.task.completed = !this.task.completed;
+    },
+    deleteTask() {
+      this.removeTask(this.task);
     }
   }
 }

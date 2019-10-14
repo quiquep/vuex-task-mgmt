@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Header/>
-    <AddTask v-on:add-task="addTask" />
-    <TaskManager v-bind:tasks="tasks" v-on:del-task="deleteTask"/>
+    <AddTask/>
+    <TaskManager/>
   </div>
 </template>
 
@@ -17,35 +17,6 @@ export default {
     Header,
     AddTask,
     TaskManager
-  },
-  data() {
-    return {
-      tasks: [
-      {
-        id: 1,
-        name: "Task 1",
-        completed: false
-      },
-      {
-        id: 2,
-        name: "Task 2",
-        completed: false
-      },
-      {
-        id: 3,
-        name: "Task 3",
-        completed: false
-      }
-    ]
-    }
-  },
-  methods: {
-    deleteTask(id) {
-      this.tasks = this.tasks.filter(task => task.id !== id);
-    },
-    addTask(task) {
-      this.tasks.push(task);
-    }
   }
 }
 </script>

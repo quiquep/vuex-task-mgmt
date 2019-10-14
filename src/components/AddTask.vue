@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form @submit="addTask">
+        <form @submit="onSubmit">
             <input type="text" v-model="name" name ="name" 
             placeholder="Add Task">
             <input type="submit" value="Add Task" class="btn">
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapActions} from 'vuex';
 import uuid from 'uuid';
 
 export default {
@@ -19,14 +20,15 @@ export default {
         }
     },
     methods: {
-        addTask(e) {
+        ...mapActions(['addTask']),
+        onSubmit(e) {
             e.preventDefault();
             const task = {
                 id: uuid.v4(),
                 name: this.name,
                 completed: false
             }
-            this.$emit('add-task', task);
+            this.addTask(task);
         }
     }
 }
