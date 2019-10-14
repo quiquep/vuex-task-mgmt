@@ -25,7 +25,9 @@ const getters = {
 };
 
 const actions = {
-    fetchTasks: state => state.tasks,
+    fetchTasks({ commit }, tasks) {        
+        commit('setTasks', tasks);
+    },
     addTask( { commit }, task) {
         commit('newTask', task);
     },
@@ -35,6 +37,7 @@ const actions = {
 };
 
 const mutations = {
+    setTasks: (state, tasks) => state.tasks = tasks,
     newTask: (state, task) => state.tasks.unshift(task),
     deleteTask: (state, task) => state.tasks = state.tasks.filter(t => task.id !== t.id),
 };
