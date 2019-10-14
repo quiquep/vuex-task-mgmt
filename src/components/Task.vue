@@ -14,9 +14,14 @@ export default {
   name: "Task",
   props: ["task"],
   methods: {
-    ...mapActions(['removeTask']),
+    ...mapActions(['removeTask', 'updateTask']),
     markComplete() {
-      this.task.completed = !this.task.completed;
+      const updatedTask = {
+          id: this.task.id,
+          name: this.task.name,
+          completed: !this.task.completed
+      };
+      this.updateTask(updatedTask);
     },
     deleteTask() {
       this.removeTask(this.task);

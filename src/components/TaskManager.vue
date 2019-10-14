@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions} from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import Task from './Task';
 
 export default {
@@ -22,7 +22,3 @@ export default {
   computed: mapGetters(['allTasks'])
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>

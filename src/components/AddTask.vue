@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { mapActions} from 'vuex';
+import { mapActions } from 'vuex';
 import uuid from 'uuid';
 
 export default {
