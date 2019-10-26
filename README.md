@@ -1,8 +1,6 @@
 # Task App
 
-Source code of the application created as part of the [VUE JS Crash Course](https://www.youtube.com/watch?v=D52ukqyAAzE)
-
-[💖 Become a Patron: Show support & get exclusive content!](https://www.patreon.com/pragmatic)
+Source code of the application created as part of the VUE JS Crash Course
 
 ## VUE-CLI Installation
 
